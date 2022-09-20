@@ -1,0 +1,13 @@
+data_Arhanif_csv = read.csv("C:/Data Kuliah Arhanif/PrakStatis1.csv", header = TRUE, sep = ";")
+
+View(data_Arhanif_csv)
+
+mean(data_Arhanif_csv$Tinggi.badan)
+
+str(data_Arhanif_csv)
+
+install.packages("xlsx")
+
+library("xlsx")
+
+data_Arhanif_xlsx = read.xlsx("C:/Data Kuliah Arhanif/PrakStatis1.xlsx",1)
