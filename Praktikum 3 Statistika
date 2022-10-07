@@ -1,0 +1,32 @@
+data_Arhanif = read.csv("C:/Data Kuliah Arhanif/Statistika/prakstat3.csv", sep = ",")
+View(data_Arhanif)
+
+prakstat3 <- data_Arhanif[data_Arhanif$Tinggi.badan == 155,]
+View (prakstat3)
+
+data_Arhanif$Tinggi.badan <- ifelse(data_Arhanif$Tinggi.badan > 160, c("Tinggi"), c("Pendek"))
+View(prakstat3)
+
+data_Arhanif$Jurusan <- c("Infor20")
+data_Arhanif$Fakultas <- c("FTI")
+View (data_Arhanif)
+
+data_Arhanif$Fakultas <- NULL
+View(data_Arhanif)
+
+data_Arhanif.kolom1dan2 <- data_Arhanif[,1:2]
+View(data_Arhanif.kolom1dan2)
+data_Arhanif.kolom3dan4 <- data_Arhanif[,3:4]
+View(data_Arhanif.kolom3dan4)
+data_Arhanif.kolom1sd4 <- cbind(data_Arhanif.kolom1dan2, data_Arhanif.kolom3dan4)
+View(data_Arhanif.kolom1sd4)
+
+data_Arhanif.baris1sd5 <- data_Arhanif[1:5,]
+View(data_Arhanif.baris1sd5)
+data_Arhanif.baris25sd30 <- data_Arhanif[25:30,]
+View(data_Arhanif.baris25sd30)
+data_Arhanif.baris1sd5dan25sd30 <- rbind(data_Arhanif.baris1sd5, data_Arhanif.baris25sd30)
+View(data_Arhanif.baris1sd5dan25sd30)
+
+data_Arhanif.sort <- data_Arhanif[order(data_Arhanif$Waktu.perjalanan),]
+View(data_Arhanif.sort)
