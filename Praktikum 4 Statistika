@@ -1,0 +1,4 @@
+arhanif = read.delim("clipboard")
+View(arhanif)
+
+t.test(arhanif$Volume, conf.level = 0.5)
