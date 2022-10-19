@@ -1,0 +1,5 @@
+arhanif = read.delim("clipboard")
+View(arhanif)
+str(arhanif)
+mean(arhanif$penghasilan)
+t.test(arhanif$penghasilan, mu=14500)
