@@ -1,0 +1,8 @@
+df_arhanif=PlantGrowth
+View(df_arhanif)
+
+model <- aov(weight~group, data=df_arhanif)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
