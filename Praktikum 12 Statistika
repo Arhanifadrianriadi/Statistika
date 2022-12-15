@@ -1,0 +1,14 @@
+df_nama=read.delim("clipboard")
+head(df_nama)
+model_reg=lm(df_nama$Y~df_nama$X)
+summary(model_reg)
+
+df_arhan=read.delim("clipboard")
+df_arhan$brick_dummy <- ifelse(df_arhan$Brick =="Yes", 1,0)
+df_arhan$N_dummy1 <- ifelse(df_arhan$Neighborhood =="West", 1,0)
+df_arhan$N_dummy2 <- ifelse(df_arhan$Neighborhood =="North", 1,0)
+model=lm(df_arhan$Price~df_arhan$SqFt+df_arhan$Bedrooms+df_arhan$Bathrooms+df_arhan$brick_dummy+df_arhan$N_dummy1+df_arhan$N_dummy2)
+summary(model)
+
+by(df_arhan$Price, df_arhan$Neighborhood, mean)
+by(df_arhan$Price, df_arhan$Brick, mean)
